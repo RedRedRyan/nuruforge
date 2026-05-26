@@ -1,0 +1,224 @@
+@import 'tailwindcss';
+
+
+@font-face{
+  font-family: "Source";
+  src: url("/fonts/Source.ttf") format("truetype");
+}
+@font-face{
+  font-family: "Comfortaa";
+  src: url("/fonts/Comfortaa.ttf") format("truetype");
+}
+@theme{
+  --color-white: #f9f9f9;
+  --color-lgray: #f1f1f1;
+  --color-gray: #7b7b7b;
+  --color-dgray: #333333;
+  --color-green: #00D54B;
+  --font-source: "Source", sans-serif;
+  --font-comfortaa: "Comfortaa", sans-serif;
+}
+html,
+body {
+    width: 100%;
+    background-color: #000000;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
+
+@utility col-center {
+  @apply flex flex-col justify-center items-center;
+}
+
+@utility abs-center {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility text-gradient {
+  background: linear-gradient(to bottom, #ffffff, #898989);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility radial-gradient {
+  background: radial-gradient(
+          ellipse farthest-corner at center,
+          #00845b 0%,
+          #222 60%,
+          #000 100%
+  );
+}
+@utility linear-Gradient {
+  background: linear-gradient(to bottom, #ffffff, #898989);
+}
+@utility grid-background {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.1) 2px,
+    transparent 2px
+  ),
+  linear-gradient(90deg, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+  linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+
+@utility masked-img {
+  mask-image: url("/images/mask-img.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 50%;
+}
+@utility farm-img {
+  background: url("/images/farm.png") no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#hero {
+  @apply relative z-10 min-h-dvh w-full border border-transparent px-5 sm:px-10 pb-20 container mx-auto;
+
+  h1 {
+      @apply md:mt-32 mt-40 text-6xl md:text-[10vw] leading-none text-left font-comfortaa text-white mb-10;
+  }
+  .hero-info{
+    @apply text-xl lg:max-w-2xs md:max-w-xs container  absolute  right-0 lg:bottom-20 top-auto md:top-[30vh] text-white text-right mr-5 font-source;
+  }
+
+  .left-leaf {
+      @apply absolute left-0 md:top-20 xl:top-36 2xl:top-52 md:bottom-auto -bottom-20 md:w-fit w-1/3;
+  }
+
+  .right-leaf {
+      @apply absolute right-0 md:bottom-0 xl:top-0 2xl:top-12 top-1/3 md:w-fit size-40;
+  }
+  .hero-cube {
+    @apply absolute left-1/2 bottom-20 size-80 ;
+}
+
+.hero-grid {
+  @apply grid grid-cols-1 lg:grid-cols-4 gap-5 md:px-0 px-5 ;
+
+  > div {
+      @apply  overflow-hidden h-36 xl:h-48 xl:w-auto w-1/2 relative;
+  }
+  
+} 
+}
+.badge {
+  @apply inline-block rounded-full bg-green text-black px-4 py-2 text-sm font-medium mb-8;
+}
+#about {
+        @apply min-h-screen  grid-background;
+
+        .content {
+            @apply grid grid-cols-1 lg:grid-cols-12 gap-5;
+
+            h2 {
+                @apply text-5xl md:text-6xl font-comfortaa max-w-lg text-white;
+            }
+
+            .sub-content {
+                @apply md:col-span-4 space-y-5 flex flex-col justify-between;
+
+                p {
+                    @apply text-lg text-white;
+                }
+
+                div {
+                    @apply flex flex-col justify-between md:gap-2 gap-5;
+
+                    span {
+                        @apply text-green font-bold text-5xl;
+                    }
+                }
+            }
+        }
+
+        .badge {
+            @apply inline-block rounded-full bg-white text-black px-4 py-2 text-sm font-medium mb-8;
+        }
+
+        .top-grid {
+            @apply grid grid-cols-1 xl:grid-cols-12 gap-5 mb-5 md:px-0 px-5;
+
+            > div {
+                @apply rounded-3xl overflow-hidden h-72 relative;
+            }
+
+            img {
+                @apply object-cover w-full h-full;
+            }
+        }
+
+        .bottom-grid {
+            @apply grid grid-cols-1 md:grid-cols-12 gap-5 md:px-0 px-5;
+
+            > div {
+                @apply rounded-3xl overflow-hidden h-72 relative;
+            }
+
+            img {
+                @apply object-cover w-full h-full;
+            }
+        }
+    }
+#tech {
+  @apply relative w-full overflow-hidden bg-white;
+  height: 100vh;
+
+  .panel {
+    @apply absolute w-full h-full top-0 left-0 flex-center flex-col text-center;
+  }
+
+  /* Give each panel a background so content is actually visible */
+  .panel.description { @apply bg-black; }
+  .panel.one       { background-color: #000000; }
+
+  .panel.two        {background-color: #00D54B; }
+  .panel.three      { background-color: #ffffff; }
+  .panel.four      { background-color: #000000; }
+
+  .panel p {
+    font-size: 5vw;
+  }
+  .top-grid {
+    @apply absolute  top-10 lg:top-48 grid grid-cols-2 lg:grid-cols-2 gap-5 mb-5 md:px-0 px-5;
+
+    > div {
+        @apply rounded-3xl overflow-hidden h-40 w-40  relative ;
+    }
+
+    img {
+        @apply object-cover w-full h-full;
+    }
+}
+
+}
+#kiota{
+  @apply relative z-10 min-h-dvh w-full border border-transparent bg-white;
+}
+#footer {
+  @apply w-full py-10 text-center text-sm;
+  h1 {
+      @apply text-3xl font-comfortaa mb-5 text-green;
+  }
+  .footer-grid {
+    @apply grid grid-cols-1 xl:grid-cols-6 gap-5 mb-5 md:px-0 px-5;
+
+    > div {
+        @apply overflow-hidden h-auto relative;
+    }
+
+    img {
+        @apply object-cover w-full h-full;
+    }
+}
+}
