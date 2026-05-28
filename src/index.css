@@ -52,10 +52,28 @@ body {
           #000 100%
   );
 }
+@utility cut-tr-corner {
+  clip-path: polygon(
+    0% 0%,
+    calc(100% - 30px) 0%,
+    100% 30px,
+    100% 100%,
+    0% 100%
+  );
+}
+@utility cut-tl-corner {
+  clip-path: polygon(
+    30px 0%,
+    100% 0%,
+    100% 100%,
+    0% 100%,
+    0% 30px
+  );
+}
 @utility linear-Gradient {
   background: linear-gradient(to bottom, #ffffff, #898989);
 }
-@utility grid-background {
+@utility white-grid-background {
   background-image: linear-gradient(
     rgba(255, 255, 255, 0.1) 2px,
     transparent 2px
@@ -63,6 +81,15 @@ body {
   linear-gradient(90deg, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
   linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
   linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+@utility green-grid-background {
+  background-image: 
+    linear-gradient(rgba(0, 213, 75, 0.4) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(0, 213, 75, 0.4) 2px, transparent 2px),
+    linear-gradient(rgba(0, 213, 75, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 213, 75, 0.25) 1px, transparent 1px);
   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
@@ -81,7 +108,34 @@ body {
   height: 100%;
   position: absolute;
 }
+@layer components {
+  main {
+      @apply w-full overflow-x-hidden;
+  }
 
+  nav {
+      @apply fixed z-50 w-full;
+
+      div {
+          @apply flex md:flex-row flex-col md:justify-between items-center gap-5 py-5 lg:px-0 px-5 container mx-auto;
+      }
+
+      p {
+          @apply font-comfortaa text-3xl -mb-2;
+      }
+
+      a {
+          @apply cursor-pointer text-nowrap md:text-base text-sm text-white hover:text-green;
+      }
+
+      ul {
+          @apply flex-center lg:gap-12 gap-7;
+      }
+  }
+
+  .noisy {
+      @apply absolute inset-0 size-full bg-[url("/images/noise.png")];
+  }
 #hero {
   @apply relative z-10 min-h-dvh w-full border border-transparent px-5 sm:px-10 pb-20 container mx-auto;
 
@@ -89,18 +143,28 @@ body {
       @apply md:mt-32 mt-40 text-6xl md:text-[10vw] leading-none text-left font-comfortaa text-white mb-10;
   }
   .hero-info{
-    @apply text-xl lg:max-w-2xs md:max-w-xs container  absolute  right-0 lg:bottom-20 top-auto md:top-[30vh] text-white text-right mr-5 font-source;
+    @apply text-xl lg:max-w-2xs md:max-w-xs container  absolute  right-0 lg:bottom-30 bottom-auto md:bottom-[30vh] text-white text-right mr-5 font-source;
   }
+  .planet-green {
+    @apply absolute right-0  xl:top-80 2xl:top-120 top-1/4 md:w-fit size-20 cursor-pointer z-10 ;
+}
 
   .left-leaf {
-      @apply absolute left-0 md:top-20 xl:top-36 2xl:top-52 md:bottom-auto -bottom-20 md:w-fit w-1/3;
+      @apply  left-0 md:top-20 xl:top-36 2xl:top-52 md:bottom-auto -bottom-20 md:w-fit w-1/3;
   }
 
   .right-leaf {
-      @apply absolute right-0 md:bottom-0 xl:top-0 2xl:top-12 top-1/3 md:w-fit size-40;
+      @apply absolute right-0  xl:top-80 2xl:top-120 top-1/4 md:w-fit size-20;
   }
   .hero-cube {
     @apply absolute left-1/2 bottom-20 size-80 ;
+}
+.action-buttons{
+  @apply flex gap-5 mt-10 bottom-0;
+
+  a {
+      @apply inline-block rounded-full bg-green text-black px-4 py-2 text-sm font-comfortaa;
+  }
 }
 
 .hero-grid {
@@ -109,14 +173,16 @@ body {
   > div {
       @apply  overflow-hidden h-36 xl:h-48 xl:w-auto w-1/2 relative;
   }
-  
-} 
+  .info {
+    @apply text-2xl font-comfortaa text-white col-span-full text-center mt-5;
+  }
+}
 }
 .badge {
-  @apply inline-block rounded-full bg-green text-black px-4 py-2 text-sm font-medium mb-8;
+  @apply inline-block rounded-full bg-white hover:bg-green text-black px-4 py-2 text-sm font-comfortaa mb-8;
 }
 #about {
-        @apply min-h-screen  grid-background;
+        @apply min-h-screen  white-grid-background;
 
         .content {
             @apply grid grid-cols-1 lg:grid-cols-12 gap-5;
@@ -147,10 +213,10 @@ body {
         }
 
         .top-grid {
-            @apply grid grid-cols-1 xl:grid-cols-12 gap-5 mb-5 md:px-0 px-5;
+            @apply grid grid-cols-1 xl:grid-cols-12 gap-5 mb-5 md:px-0 px-5 mt-5;
 
             > div {
-                @apply rounded-3xl overflow-hidden h-72 relative;
+                @apply rounded-3xl overflow-hidden h-72 relative bg-transparent;
             }
 
             img {
@@ -159,7 +225,7 @@ body {
         }
 
         .bottom-grid {
-            @apply grid grid-cols-1 md:grid-cols-12 gap-5 md:px-0 px-5;
+            @apply grid grid-cols-1 lg:grid-cols-12 gap-5 md:px-0 px-5 ;
 
             > div {
                 @apply rounded-3xl overflow-hidden h-72 relative;
@@ -181,7 +247,6 @@ body {
   /* Give each panel a background so content is actually visible */
   .panel.description { @apply bg-black; }
   .panel.one       { background-color: #000000; }
-
   .panel.two        {background-color: #00D54B; }
   .panel.three      { background-color: #ffffff; }
   .panel.four      { background-color: #000000; }
@@ -202,8 +267,8 @@ body {
 }
 
 }
-#kiota{
-  @apply relative z-10 min-h-dvh w-full border border-transparent bg-white;
+#contact{
+  @apply relative z-10 min-h-dvh w-full border border-transparent bg-green;
 }
 #footer {
   @apply w-full py-10 text-center text-sm;
@@ -217,8 +282,7 @@ body {
         @apply overflow-hidden h-auto relative;
     }
 
-    img {
-        @apply object-cover w-full h-full;
-    }
+    
+}
 }
 }

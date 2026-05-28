@@ -116,7 +116,7 @@ export default function Info() {
       {/* Content section */}
       <div className="px-20 py-8">
         <h2 className="text-6xl font-semibold mb-4 text-white">Inroducing Kiota</h2>
-        ,<p className="text-white font-comfortaa text-3xl">Kiota, which means 'nest' in Swahili, is a smart bedside lamp
+        ,<p className="text-white font-comfortaa text-3xl max-w-lg">Kiota, which means 'nest' in Swahili, is a smart bedside lamp
              designed to be a peaceful, intelligent presence in your bedroom.
               It uses cutting-edge radar sensing and on-device machine learning for 
               contactless sleep tracking and environmental awareness.</p>

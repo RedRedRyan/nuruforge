@@ -1,62 +1,56 @@
 const navLinks = [
     {
-      id: "vaults",
-      title: "Vaults",
+      id: "about",
+      title: "About",
     },
     {
-      id: "markets",
-      title: "Markets",
+      id: "craft",
+      title: "Craft",
     },
     {
-      id: "dashboard",
-      title: "Dashboard",
+      id: "info",
+      title: "Info",
+    },
+    {
+      id: "contact",
+      title: "Contact",
     },
   ];
+
   const socials = [
     {
-      name: "Fhenix",
-      icon: "https://cdn.prod.website-files.com/6864e9aed9e0a3fac7810db8/68a473dd63e0265d2d6cf9a3_(fhenix_)%20(16).svg",
-      url: "https://www.fhenix.io/",
-    },
-  ];
-  const vaultLists = [
-    {
-      network: "/images/cryptologos/eth.svg",
-      token: "/images/cryptologos/usdc.svg",
-      name: "USDC Core Vault",
-      curator: "Gauntlet",
-      liquidity: "$184.2M",
-      apy: "8.41%",
-      slug: "vault-1",
+       name: "Youtube",
+       icon: "/icons/youtube.png",
+       url: "https://www.youtube.com/@Nuruforge",
     },
     {
-      network: "/images/cryptologos/eth.svg",
-      token: "/images/cryptologos/usdt.svg",
-      name: "ETH Flagship Vault",
-      curator: "MEV Capital",
-      liquidity: "$97.5M",
-      apy: "5.12%",
-      slug: "vault-2",
+       name: "X (Twitter)",
+       icon: "/icons/x.png",
+       url: "https://x.com/nuruforge",
     },
     {
-      network: "/images/cryptologos/base.svg",
-      token: "/images/cryptologos/usdc.svg",
-      name: "USDC Base Eagle",
-      curator: "Re7 Labs",
-      liquidity: "$61.0M",
-      apy: "3.87%",
-      slug: "vault-3",
+       name: "TikTok",
+       icon: "/icons/tiktok.png",
+       url: "https://www.tiktok.com/@nuruforge",
     },
-    {
-      network: "/images/cryptologos/arb.svg",
-      token: "/images/cryptologos/eth.svg",
-      name: "Eth on Arbitrum",
-      curator: "Steakhouse",
-      liquidity: "$42.3M",
-      apy: "6.95%",
-      slug: "vault-4",
-    },
-  ];
+        {
+        name: "LinkedIn",
+        icon: "/icons/linkedin.png",
+        url: "https://www.linkedin.com/company/nuruforge",
+        },
+        {
+            name: "Instagram",
+            icon: "/icons/instagram.png",
+            url: "https://www.instagram.com/nuruforge",
+        },
+        {
+            name: "Facebook",
+            icon: "/icons/facebook.png",
+            url: "https://www.facebook.com/nuruforge",
+        }
+   ];
+
+
   
   const marketsList = [
     {
@@ -145,74 +139,15 @@ const navLinks = [
       link: "/privacy",
     },
   ];
-  const NETWORKS = [
-    {
-      id: "ethereum",
-      label: "Ethereum",
-      icon: "/images/networks/eth.png",
-      color: "#627EEA",
-    },
-    {
-      id: "base",
-      label: "Base",
-      icon: "/images/networks/base.png",
-      color: "#0052FF",
-    },
-    {
-      id: "arbitrum",
-      label: "Arbitrum",
-      icon: "/images/networks/arb.png",
-      color: "#12AAFF",
-    },
-  ];
-  
-  // ─── Dummy recent transactions ─────────────────────────────────────
-  const RECENT_TXS = [
-    {
-      id: "0x1a2b…9f0e",
-      type: "Deposit",
-      asset: "USDT",
-      network: "Ethereum",
-      status: "confirmed",
-    },
-    {
-      id: "0x3c4d…8e1f",
-      type: "Borrow",
-      asset: "ETH",
-      network: "Base",
-      status: "confirmed",
-    },
-    {
-      id: "0x5e6f…7d2a",
-      type: "Repay",
-      asset: "USDC",
-      network: "Arbitrum",
-      status: "pending",
-    },
-    {
-      id: "0x7g8h…6c3b",
-      type: "Withdraw",
-      asset: "USDT",
-      network: "Ethereum",
-      status: "confirmed",
-    },
-    {
-      id: "0x9i0j…5b4c",
-      type: "Deposit",
-      asset: "USDC",
-      network: "Base",
-      status: "confirmed",
-    },
-  ];
+
+
   
 
   
   export {
     navLinks,
-    vaultLists,
     marketsList,
     features,
-    socials,
-    NETWORKS,
-    RECENT_TXS,
+    socials
+
   };

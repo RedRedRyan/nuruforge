@@ -1,6 +1,10 @@
 import gsap from 'gsap';
 import { SplitText} from 'gsap/all'
 import { useGSAP } from '@gsap/react'
+import { Flip } from "gsap/Flip";
+import Caterpillar from './Caterpillar';
+
+gsap.registerPlugin(Flip);
 
 const About = () => {
  useGSAP(() => {
@@ -26,21 +30,14 @@ const About = () => {
  
  return (
 	<div id="about">
-		<div className="py-28 2xl:px-0 px-5 container mx-auto">
-	 <div className="mb-16 md:px-0 px-5">
+		<div className=" py-28 2xl:px-0 px-5 container mx-auto">
+	 <div className=" md:px-0 px-5">
 		<div className="content">
-		 <div className="md:col-span-8">
-			<p className="badge">Best Cocktails</p>
-			<h2>
-			Artificial Intelligence 
-			<span className="text-white"> +</span>
-			 Internet of Things 
-			</h2>
-		 </div>
-		 
+		
+		 {/*SUB CONTENT*/}
 		 <div className="sub-content">
 			<p>
-			 Every cocktail we serve is a reflection of our obsession with detail — from the first muddle to the final garnish. That care is what turns a simple drink into something truly memorable.
+			Our growth no longer necessitates the recruitment and education of additional smart home integration specialists.
 			</p>
 			
 			<div>
@@ -52,36 +49,47 @@ const About = () => {
 			 </p>
 			</div>
 		 </div>
+		 	{/* MAIN CONTENT */ }
+			 <div className="md:col-span-8 flex flex-col items-end">
+  <p className="badge">AI + IoT</p>
+  <h2 className="text-right">
+    Artificial Intelligence 
+    <span className="text-white"> +</span>
+    Internet of Things 
+  </h2>
+</div>
 		</div>
 	 </div>
-	 
+	 <Caterpillar/>
+	
 	 <div className="top-grid">
-		<div className="md:col-span-3 bg-green">
-		 <div  className="noisy" />
-		 <img src="/images/abt1.png" alt="grid-img-1" />
-		</div>
-		
-		<div className="md:col-span-6 bg-white">
-		 <div  className="noisy" />
-		 <img src="/images/abt2.png" alt="grid-img-2" />
-		</div>
-		
-		<div className="md:col-span-3 bg-gray">
-		 <div  className="noisy" />
-		 <img src="/images/abt5.png" alt="grid-img-5" />
-		</div>
-	 </div>
-	 
-	 <div className="bottom-grid">
-		<div className="md:col-span-8 bg-lgray">
-		 <div  className="noisy" />
-		 <img src="/images/abt3.png" alt="grid-img-3" />
+		<div className="md:col-span-8">
+		<h1 className='text-green flex-center text-8xl top-1/2'>	From The Experts</h1>
 		</div>
 		
 		<div className="md:col-span-4">
-		 <div  className="noisy" />
-		 <img src="/images/abt4.png" alt="grid-img-4" />
+		 <img src="/images/man.png" alt="grid-img-2" className='object-cover' />
 		</div>
+		
+		
+	 </div>
+	
+	 <div className="bottom-grid">
+		<div className="md:col-span-2 bg-lgray">
+		<img src="/images/quarry.png" alt="grid-img-2" />
+		 
+		</div>
+		<div className="md:col-span-5 bg-gray">
+		 <div  className="noisy" />
+		 <h1 className='text-black flex-center lg:text-8xl text-2xl text-left'>Expect The Best</h1>
+		</div>
+		<div className="md:col-span-5 bg-dgray">
+		 <div  className="noisy" />
+		 <h1 className='text-black flex-center text-8xl text-left'>Expect The Best</h1>
+		</div>
+		
+		
+		
 	 </div>
 	 </div>
 	</div>

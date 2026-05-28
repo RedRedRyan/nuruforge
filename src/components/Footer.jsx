@@ -6,8 +6,21 @@ const Footer = () => {
     <section id="footer">
     <div className='footer-grid'>
 	<div className="md:col-span-2 ">
-		<a className='text-green mb-3 text-lg' href='https://ystudios.vercel.app/'>ystudios</a>
-        <p className='text-white font-bold'>&copy; {new Date().getFullYear()} YStudios. All Rights Reserved.</p>
+    <div className="flex-center gap-5">
+			{socials.map((social) => (
+			 <a
+			 	key={social.name}
+				href={social.url}
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label={social.name}
+			 >
+				<img src={social.icon} className='size-8' />
+			 </a>
+			))}
+		 </div>
+         
+		
             </div>
 		
 		
@@ -23,21 +36,14 @@ const Footer = () => {
 		</div>
 		<div className="md:col-span-2">
 		 <div  className="info1" />
-         <h1>Powered by</h1>
+         
 		 
 		 <div className="flex-center gap-5">
-			{socials.map((social) => (
-			 <a
-			 	key={social.name}
-				href={social.url}
-				target="_blank"
-				rel="noopener noreferrer"
-				aria-label={social.name}
-			 >
-				<img src={social.icon} className='w-64' />
-			 </a>
-			))}
+			<img src='/images/nuruforge.png' className='h-36' />
 		 </div>
+         
+         <p className='text-green font-bold'>&copy; {new Date().getFullYear()} Nuruforge. All Rights Reserved.</p>
+         <p className=''><a className='text-gray text-xs' href='https://ystudios.co.ke/'>Website made by  Ystudios</a></p>
 		 
 		 
 		</div>

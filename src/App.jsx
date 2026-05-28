@@ -1,25 +1,25 @@
-import { ScrollTrigger, SplitText } from 'gsap/all';
+import { ScrollTrigger, SplitText,Draggable, InertiaPlugin,CustomEase, CustomWiggle, MotionPathPlugin } from 'gsap/all';
 import Hero from './components/Hero';
 import gsap from 'gsap';
 import Tech from './components/Tech'
 import Info from './components/Info';
-import FlipModal from './components/Flipmodal';
 import About from './components/About';
 import Footer from './components/Footer';
+import Contact from './components/Contact';
+import Navbar from './components/Navbar';
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText,Draggable, InertiaPlugin,CustomEase, CustomWiggle, MotionPathPlugin);
 
 const App = () => {
     return (
         <>
             
-
+                <Navbar/>
                 <Hero />
                 <About/>
-                <FlipModal/>
                 <Info/>
-
                 <Tech/>
+                <Contact/>
                 <Footer/>
             
         </>
