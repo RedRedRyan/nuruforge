@@ -140,7 +140,7 @@ body {
   @apply relative z-10 min-h-dvh w-full border border-transparent px-5 sm:px-10 pb-20 container mx-auto;
 
   h1 {
-      @apply md:mt-32 mt-40 text-6xl md:text-[10vw] leading-none text-left font-comfortaa text-white mb-10;
+      @apply md:mt-32 mt-40 text-6xl md:text-[10vw] leading-none text-left font-comfortaa text-white mb-10 z-10;
   }
   .hero-info{
     @apply text-xl lg:max-w-2xs md:max-w-xs container  absolute  right-0 lg:bottom-30 bottom-auto md:bottom-[30vh] text-white text-right mr-5 font-source;
@@ -228,16 +228,14 @@ body {
             @apply grid grid-cols-1 lg:grid-cols-12 gap-5 md:px-0 px-5 ;
 
             > div {
-                @apply rounded-3xl overflow-hidden h-72 relative;
+                @apply rounded-3xl overflow-hidden h-80 relative;
             }
 
-            img {
-                @apply object-cover w-full h-full;
-            }
+            
         }
     }
 #tech {
-  @apply relative w-full overflow-hidden bg-white;
+  @apply relative w-full overflow-hidden bg-white min-h-screen;
   height: 100vh;
 
   .panel {
@@ -245,7 +243,22 @@ body {
   }
 
   /* Give each panel a background so content is actually visible */
-  .panel.description { @apply bg-black; }
+  .panel.description { @apply bg-black;
+    h1 {
+      @apply md:mt-32 mt-4 text-5xl md:text-[8vw] leading-none text-right font-comfortaa text-white mr-10;
+    }
+  
+    .tech-grid {
+      @apply grid grid-cols-2 lg:grid-cols-12 gap-5 md:px-0 px-5 mt-20;
+  
+      > div {
+          @apply rounded-3xl overflow-hidden h-40 w-40 relative;
+      > p{
+          @apply text-4xl text-white absolute bottom-5 left-5  text-left font-comfortaa;
+      }
+        }
+    }
+}
   .panel.one       { background-color: #000000; }
   .panel.two        {background-color: #00D54B; }
   .panel.three      { background-color: #ffffff; }
@@ -254,24 +267,41 @@ body {
   .panel p {
     font-size: 5vw;
   }
-  .top-grid {
-    @apply absolute  top-10 lg:top-48 grid grid-cols-2 lg:grid-cols-2 gap-5 mb-5 md:px-0 px-5;
 
-    > div {
-        @apply rounded-3xl overflow-hidden h-40 w-40  relative ;
-    }
 
-    img {
-        @apply object-cover w-full h-full;
-    }
-}
 
 }
+#info{
+  @apply relative z-10 min-h-dvh w-full ;
+
+  .scrolling-text {
+    @apply overflow-hidden w-full h-full flex;
+    
+   
+  }
+  .scrolling-text .rail {
+    @apply bottom-0 flex-center;
+    
+  }
+  .scrolling-text .rail h4 {
+    @apply text-green;
+    white-space: nowrap;
+    font-size: 100px;
+    font-weight: 900;
+    letter-spacing: ls(120);
+    line-height: 1em;
+    margin: 0 30px 0 0;
+    
+}
+}
+
+
 #contact{
-  @apply relative z-10 min-h-dvh w-full border border-transparent bg-green;
+  @apply relative z-10 min-h-dvh w-full border border-transparent bg-black;
 }
+
 #footer {
-  @apply w-full py-10 text-center text-sm;
+  @apply w-full py-10 text-center text-sm bg-green;
   h1 {
       @apply text-3xl font-comfortaa mb-5 text-green;
   }

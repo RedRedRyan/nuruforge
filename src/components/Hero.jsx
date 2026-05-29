@@ -50,13 +50,26 @@ const Hero = () => {
       inertia: true,
     });
 
-    const heroSplit = new SplitText(".title", { type: "chars, words" });
+    gsap.to(".planet-green", {
+      rotation: 360,
+      duration: 20,
+      repeat: -1,
+      ease: "linear",
+    });
+    gsap.from(".planet-green", {
+      xPercent: -800,
+      duration: 60,
+      ease: "expo.out",
+
+    });
+
+    const heroSplit = new SplitText(".hero-info", { type: "chars, words" });
     const paragraphSplit = new SplitText(".subtitle", { type: "lines" });
 
     heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
     gsap.from(heroSplit.chars, {
-      yPercent: 100,
+      xPercent: 1600,
       duration: 1.8,
       ease: "expo.out",
       stagger: 0.06,
@@ -111,7 +124,7 @@ const Hero = () => {
           </div>
 
           +
-          <h1>Forge The<br />Future</h1>
+          <h1 className="">Forge The<br />Future</h1>
           <h2 className="hero-info">
             
             AI-powered <br /> Solutions For <br /> Smarter living.
@@ -119,14 +132,14 @@ const Hero = () => {
 
           <div className="action-buttons absolute bottom-40 left-4 md:relative md:bottom-auto md:left-auto flex flex-col md:flex-row gap-5 mt-10">
   <div className="md:col-span-1">
-    <p className="badge bg-white text-blackack lg:text-xl text-sm z-10 hover:scale-105 rounded-xl transition-transform duration-300">
+    <p className="badge bg-white text-blackack lg:text-xl text-sm z-10 hover:scale-105 rounded-xl transition-transform duration-300 cursor-crosshair">
       Explore Services
     </p>
   </div>
   
   <div
     ref={zoneRef}
-    className="md:col-span-1 flex items-center justify-center rounded-full"
+    className="md:col-span-1 flex items-center justify-center w-48 h-48"
     style={{ cursor: "pointer" }}
   >
     <a

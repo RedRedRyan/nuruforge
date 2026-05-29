@@ -47,24 +47,28 @@ const Tech = () => {
       <section className="first panel description">
         
         <div className='sm:px-10 pb-20 container mx-auto'>
-        <div className="top-grid">
-		<div className="md:col-span-2 bg-transparent">
-		 <div  className="noisy" />
-     <h3 className='text-4xl text-white flex-center font-mono'>The <br/>Craft</h3>
+        <h1 className='relative'>The<br />Craft</h1>
+        <div className="tech-grid">
+    
+		<div className="md:col-span-3 bg-green">
+		 
+     <p>1<br/>Craft</p>
 		</div>
 		
-		<div className="md:col-span-1">
-		 <div  className="noisy" />
-     <img src="/images/iconrbg.png" alt="grid-img-1" />
-	
-		</div>
 		
-		<div className="md:col-span-1">
+		
+		<div className="md:col-span-3 bg-gray">
 		 <div  className="noisy" />
-     <img src="" alt="grid-img-1" />
+    <p>2 <br/>Craft</p>
 		</div>
+    <div className="md:col-span-3 bg-dgray">
+		 <div  className="noisy" />
+    <p>3<br/>Craft</p>
+		</div>
+    
 	 </div>
-        <h1 className='text-5xl md:text-[8vw] leading-none text-center font-comfortaa text-white mr-10'>The<br />Craft</h1>
+   
+        
         
         </div>
       </section>
@@ -74,7 +78,7 @@ const Tech = () => {
       <img src='/images/cube.png' className='lg:left-40 bottom-20 absolute' />
       <div className='sm:px-10 pb-20 container mx-auto'>
       <h1 className='text-5xl md:text-[8vw] leading-none text-right font-comfortaa text-white mr-10'>Edge-first<br />Intelligence</h1>
-        <h2 className="panel__number text-2xl text-white">1</h2>
+        
         </div>
       </section>
       {/* Panel Two */}
@@ -87,7 +91,7 @@ const Tech = () => {
       Resilient By<br/> Design
     </h1>
     
-    <h2 className="panel__number text-2xl text-black relative z-10">2</h2>
+    
   </div>
 </section>
       {/* Panel Three */}
@@ -96,14 +100,15 @@ const Tech = () => {
       <img src='/images/tube.png' className=' lg:right-40 absolute' />
       <div className='sm:px-10 pb-20 container mx-auto'>
       <h1 className='text-5xl md:text-[6vw] leading-none text-left font-comfortaa text-green ml-5'>Privacy & <br />Sovereignity </h1>
-        <h2 className="panel__number text-2xl text-white">3</h2>
+       
         </div>
       </section>
       {/* Panel Four */}
       <section className="panel four">
+        <img src='/images/column.png' className='absolute -left-40'/>
       <div className='sm:px-10 pb-20 container mx-auto'>
       <h1 className='text-6xl md:text-[8vw] leading-none text-right font-comfortaa text-white mr-10'>Continuous <br />Support</h1>
-        <h2 className="panel__number text-2xl text-white">4</h2>
+        
         </div>
       </section>
     </div>

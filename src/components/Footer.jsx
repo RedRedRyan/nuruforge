@@ -29,7 +29,7 @@ const Footer = () => {
             <ul className='font-arvo text-xl text-white list-none font-schibsted-grotesk'>
 		 {navLinks.map((link) => (
 			<li key={link.id}>
-			 <a href={`/${link.id}`}  className='hover:text-green font-nunito'>{link.title}</a>
+			 <a href={`/${link.id}`}  className='hover:text-black font-nunito'>{link.title}</a>
 			</li>
 		 ))}
 		</ul>
@@ -42,7 +42,7 @@ const Footer = () => {
 			<img src='/images/nuruforge.png' className='h-36' />
 		 </div>
          
-         <p className='text-green font-bold'>&copy; {new Date().getFullYear()} Nuruforge. All Rights Reserved.</p>
+         <p className='text-white font-bold'>&copy; {new Date().getFullYear()} Nuruforge. All Rights Reserved.</p>
          <p className=''><a className='text-gray text-xs' href='https://ystudios.co.ke/'>Website made by  Ystudios</a></p>
 		 
 		 
