@@ -137,7 +137,7 @@ body {
       @apply absolute inset-0 size-full bg-[url("/images/noise.png")];
   }
 #hero {
-  @apply relative z-10 min-h-dvh w-full border border-transparent px-5 sm:px-10 pb-20 container mx-auto;
+  @apply relative z-10 min-h-dvh w-full px-5 sm:px-10 pb-20 container mx-auto ;
 
   h1 {
       @apply md:mt-32 mt-40 text-6xl md:text-[10vw] leading-none text-left font-comfortaa text-white mb-10 z-10;
@@ -244,25 +244,41 @@ body {
 
   /* Give each panel a background so content is actually visible */
   .panel.description { @apply bg-black;
+    .right-hand {
+      @apply absolute right-0 lg:left-1/2  xl:top-40 2xl:top-60 top-20 md:w-fit size-20 lg:size-32;
+  }
     h1 {
-      @apply md:mt-32 mt-4 text-5xl md:text-[8vw] leading-none text-right font-comfortaa text-white mr-10;
+      @apply md:mt-32 mt-4 text-5xl md:text-[4vw] leading-none text-right font-comfortaa text-green mr-10;
     }
-  
+
+
+    
+    
     .tech-grid {
-      @apply grid grid-cols-2 lg:grid-cols-12 gap-5 md:px-0 px-5 mt-20;
+      @apply grid grid-cols-2 lg:grid-cols-9 gap-5 md:px-0 px-5 mt-20;
   
       > div {
-          @apply rounded-3xl overflow-hidden h-40 w-40 relative;
+          @apply rounded-3xl overflow-hidden h-56 relative;
       > p{
-          @apply text-4xl text-white absolute bottom-5 left-5  text-left font-comfortaa;
+          @apply lg:text-3xl text-2xl text-black absolute bottom-5 right-5  text-right font-comfortaa;
       }
         }
     }
+
+    
+
 }
-  .panel.one       { background-color: #000000; }
-  .panel.two        {background-color: #00D54B; }
+  .panel.one       { 
+    @apply bg-black;
+    .cube{
+      @apply lg:left-40 bottom-20 absolute;
+    }
+   }
+  .panel.two        {
+    @apply bg-dgray;
+  }
   .panel.three      { background-color: #ffffff; }
-  .panel.four      { background-color: #000000; }
+  .panel.four      { background-color: #00D54B; }
 
   .panel p {
     font-size: 5vw;
@@ -292,6 +308,16 @@ body {
     line-height: 1em;
     margin: 0 30px 0 0;
     
+}
+.info-grid {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-5 md:px-0 px-5 mt-20;
+
+  > div {
+      @apply rounded-3xl overflow-hidden h-96 relative;
+  > p{
+      @apply text-4xl text-white bottom-5 left-5  text-left font-comfortaa;
+  }
+    }
 }
 }
 

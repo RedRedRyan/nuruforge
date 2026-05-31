@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 
 const Tech = () => {
   const techRef = useRef(null);
@@ -41,30 +42,53 @@ const Tech = () => {
     return () => ctx.revert();
   }, []);
 
+  useGSAP(() => {
+    gsap
+	.timeline({
+	 scrollTrigger: {
+		trigger: ".tech-grid",
+		start: "top top",
+		end: "bottom top",
+		scrub: true,
+	 },
+	})
+	.to(".right-hand", { x: -300 }, 0)
+  });
+
+  
+
   return (
     <div ref={techRef} id="tech">
       {/* Description Panel */}
       <section className="first panel description">
+        <img src="/images/hand.png" className='right-hand'/>
         
         <div className='sm:px-10 pb-20 container mx-auto'>
-        <h1 className='relative'>The<br />Craft</h1>
+        <h1 className='relative text-right md:col-span-1 '>Experience<br />Innovation</h1>
+         
+       
         <div className="tech-grid">
+          
     
-		<div className="md:col-span-3 bg-green">
+		<div className="md:col-span-3 bg-white">
+      <img className='object-cover absolute' src='/images/home.png'/>
 		 
-     <p>1<br/>Craft</p>
+     <p>For <br/> Homes</p>
 		</div>
 		
 		
 		
-		<div className="md:col-span-3 bg-gray">
+		<div className="md:col-span-3 bg-green">
 		 <div  className="noisy" />
-    <p>2 <br/>Craft</p>
+     <img src='/images/pillar-small.png' className='right-0 lg:mt-10'/>
+    <p className='lg:text-3xl'>The <br/> Craft </p>
 		</div>
-    <div className="md:col-span-3 bg-dgray">
+    <div className="md:col-span-3 bg-white">
+    <img className='object-cover absolute' src='/images/industry.png'/>
 		 <div  className="noisy" />
-    <p>3<br/>Craft</p>
+    <p>And<br/>Industries</p>
 		</div>
+
     
 	 </div>
    
@@ -75,7 +99,7 @@ const Tech = () => {
 
       {/* Panel One */}
       <section className="panel one">
-      <img src='/images/cube.png' className='lg:left-40 bottom-20 absolute' />
+      <img src='/images/cube.png' className='cube' />
       <div className='sm:px-10 pb-20 container mx-auto'>
       <h1 className='text-5xl md:text-[8vw] leading-none text-right font-comfortaa text-white mr-10'>Edge-first<br />Intelligence</h1>
         
@@ -83,11 +107,12 @@ const Tech = () => {
       </section>
       {/* Panel Two */}
       <section className="panel two">
-  <img src='/images/stairs1r.png' className='right-0 bottom-0 absolute size-160 ' />
-  <img src='/images/wgraph.png' className='-left-40 top-0 absolute ' />
+  <img src='/images/graph.png' className='right-0 top-1/2 absolute ' />
+  {/* <img src='/images/wgraph.png' className='-left-40 top-1/2 absolute ' /> */}
+  <img src='/images/ggraph.png' className='-left-40 bottom-20 absolute ' />
   
   <div className="container mx-auto px-4 sm:px-10 pt-10 pb-20">
-    <h1 className='text-5xl md:text-[7vw] leading-none text-left lg:text-center font-comfortaa text-white mb-10 relative z-10'>
+    <h1 className='text-5xl md:text-[8vw] leading-none text-left lg:text-center font-comfortaa text-white mb-10 relative z-10'>
       Resilient By<br/> Design
     </h1>
     
@@ -96,8 +121,8 @@ const Tech = () => {
 </section>
       {/* Panel Three */}
       <section className="panel three">
-      <img src='/images/monsterlook.png' className=' top-10  absolute w-72' />
-      <img src='/images/tube.png' className=' lg:right-40 absolute' />
+      <img src='/images/monsterlook.png' className=' top-40  absolute w-72' />
+      <img src='/images/tube.png' className=' lg:right-40 lg:top-1/4 bottom-0  absolute' />
       <div className='sm:px-10 pb-20 container mx-auto'>
       <h1 className='text-5xl md:text-[6vw] leading-none text-left font-comfortaa text-green ml-5'>Privacy & <br />Sovereignity </h1>
        
@@ -105,7 +130,9 @@ const Tech = () => {
       </section>
       {/* Panel Four */}
       <section className="panel four">
-        <img src='/images/column.png' className='absolute -left-40'/>
+       
+        
+        <img src='/images/column.png' className='absolute lg:size-140 size-80 -left-40 bottom-10'/>
       <div className='sm:px-10 pb-20 container mx-auto'>
       <h1 className='text-6xl md:text-[8vw] leading-none text-right font-comfortaa text-white mr-10'>Continuous <br />Support</h1>
         

@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <section id="footer">
     <div className='footer-grid'>
-	<div className="md:col-span-2 ">
+	<div className="md:col-span-2  space-y-2">
     <div className="flex-center gap-5">
 			{socials.map((social) => (
 			 <a
@@ -19,7 +19,8 @@ const Footer = () => {
 			 </a>
 			))}
 		 </div>
-         
+         <p>+254 705 447903</p>
+		 <p>contact@nuruforge.com</p>
 		
             </div>
 		

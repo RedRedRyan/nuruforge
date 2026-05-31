@@ -117,10 +117,10 @@ export default function Contact() {
         <div className="flex-1 w-full max-w-lg">
           <div className="mb-8">
             <h1 className="text-white text-4xl font-comfortaa font-normal mb-2">
-              Get in Touch
+              Got work for us?
             </h1>
             <p className="text-white/40 font-source text-sm">
-              Let's build something together.
+              Let's talk.
             </p>
           </div>
 

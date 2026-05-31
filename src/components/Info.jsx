@@ -205,9 +205,9 @@ function horizontalLoop(items, config) {
           <div className="bento__item relative overflow-hidden green-grid-background" style={{ gridArea: "3/1/4/2" }}>
           <div class="scrolling-text">
   <div class="rail text-white">
-    <h4>Animate Anything...</h4>
-    <h4>Delivering silky-smooth performance</h4>
-    <h4>so you can focus on the fun stuff.</h4>
+    <h4>Forge the future...</h4>
+    <h4>Intelligent spaces. Human values</h4>
+    <h4>Smarter living, stronger privacy.</h4>
   </div>
 </div>
           </div>
@@ -219,20 +219,36 @@ function horizontalLoop(items, config) {
           <div className="bento__item relative overflow-hidden" style={{ gridArea: "4/1/5/2" }} />
 
           {/* 8 — row 4, col 2 */}
-          <div className="bento__item relative overflow-hidden" style={{ gridArea: "4/2/5/3" }}>
-          <h4 className="text-white object-cover text-5xl flex-center bottom-0 font-comfortaa ">focus</h4>
-          </div>
+          <div className="bento__item relative overflow-hidden bg-green" style={{ gridArea: "4/2/5/3" }}>
+        <h1 className="text-8xl h-full flex-center bottom-0 font-source"> Info</h1>
+           </div>
 
         </div>
       </div>
 
-      {/* Content section */}
-      <section className="min-h-screen flex flex-col items-start justify-center gap-5 px-10">
+ {/* Content section */}
+<section className="min-h-dvh ">
+  <div className="container mx-auto px-4 sm:px-10 py-20 relative z-10">
+<h2 className="text-6xl font-semibold mt-4 text-white">
+        Founded in <span className="text-green">2025</span>
+      </h2>
+  <div className="info-grid">
+    {/* Left div - Content */}
+    <div className="md:col-span-1 flex flex-col items-start justify-center gap-5 px-10 bg-transparent">
+      
+      <p className="text-white font-comfortaa text-3xl max-w-lg">
+        Explore the latest innovations, tips, and insights about our smart home products and technology.
+      </p>
+      <a className="badge bg-green px-4 py-2 rounded-full text-white">Blog</a>
+    </div>
 
-        <h2 className="text-6xl font-semibold mb-4 text-white">Founded in <span className="text-green">2025</span></h2>
-        ,<p className="text-white font-comfortaa text-3xl max-w-lg">Explore the latest innovations, tips, and insights about our smart home products and technology
-              contactless sleep tracking and environmental awareness.</p>
-      </section>
+    {/* Right div - Empty with white background */}
+    <div className="md:col-span-1 bg-white rounded-3xl">
+    
+    </div>
+  </div>
+  </div>
+</section>
       </section>
     </>
   );
