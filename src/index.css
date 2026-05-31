@@ -275,7 +275,7 @@ body {
     }
    }
   .panel.two        {
-    @apply bg-dgray;
+    @apply bg-black;
   }
   .panel.three      { background-color: #ffffff; }
   .panel.four      { background-color: #00D54B; }
