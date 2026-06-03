@@ -326,6 +326,10 @@ body {
   @apply relative z-10 min-h-dvh w-full border border-transparent bg-black;
 }
 
+#test {
+  @apply min-h-screen w-full px-5 sm:px-10 pb-20 container mx-auto;
+}
+
 #footer {
   @apply w-full py-10 text-center text-sm bg-green;
   h1 {

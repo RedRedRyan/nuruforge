@@ -3,6 +3,7 @@ import { SplitText} from 'gsap/all'
 import { useGSAP } from '@gsap/react'
 import { Flip } from "gsap/Flip";
 import Caterpillar from './Caterpillar';
+import ResilienceTest from './ResilienceTest';
 
 gsap.registerPlugin(Flip);
 
@@ -104,6 +105,7 @@ gsap.to(".bg", {
 		
 	 </div>
 	 </div>
+	 <ResilienceTest/>
 	</div>
  )
 }

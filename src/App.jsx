@@ -7,6 +7,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
+import ResilienceTest from './components/ResilienceTest';
 
 
 
@@ -20,7 +21,9 @@ const App = () => {
 
                 <Hero />
                 <About/>
+                
                 <Info/>
+              
                 <Tech/>
                 <Contact/>
                 <Footer/>
