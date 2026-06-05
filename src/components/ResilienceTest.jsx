@@ -288,30 +288,22 @@ export default function ResilienceTest() {
       id='test'
       
     >
-      
-
-      {/* Header */}
-      <div className=" px-4 sm:px-5 py-3 flex flex-wrap justify-between items-baseline gap-1.5">
-        <span
-          className="font-comfortaa text-[11px] sm:text-[12px] font-bold text-[#f5f4f0] uppercase tracking-widest"
+           
+      <span
+          className="font-comfortaa  font-bold text-white uppercase tracking-widest"
     
         >
           The Resilience // Test
         
         </span>
-        <span
-          className="font-comfortaa text-[9px] sm:text-[10px] text-green uppercase tracking-widest"
-    
-        >
-          Africa&apos;s infrastructure gaps × AIoT
-        </span>
-      </div>
+
+      
 
       {/* Controls */}
       <div className="] grid grid-cols-1 sm:grid-cols-2 border-b border-[#0f0f0f]">
         <div className="px-4 sm:px-5 py-4 border-b sm:border-b-0 sm:border-r border-[#2a2a2a]">
           <div
-            className=""
+            className="flex flex-wrap justify-between items-baseline"
     
           >
              <p className="font-comfortaa text-xl sm:text-[10px] text-green uppercase tracking-widest"> Grid power</p>
@@ -325,10 +317,14 @@ export default function ResilienceTest() {
         </div>
         <div className="px-4 sm:px-5 py-4">
           <div
-            className="font-comfortaa text-[9px] sm:text-[10px] text-green uppercase tracking-widest mb-2.5"
+            className="flex flex-wrap justify-between items-baseline"
     
           >
-            📶 Network
+
+            <img src="./images/net.png" className="size-8"/>
+            <p className="font-comfortaa text-xl sm:text-[10px] text-green uppercase tracking-widest"> Network</p>
+
+           
           </div>
           <div className="flex border border-[#2e2e2e]">
             {[["strong", "Strong"], ["weak", "Weak"], ["none", "None"]].map(([v, label]) => (

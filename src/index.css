@@ -290,6 +290,13 @@ body {
 #info{
   @apply relative z-10 min-h-dvh w-full ;
 
+  .test-planet{
+    @apply absolute left-0 bottom-0 z-10 size-10 ;
+}
+.test-planet2{
+  @apply absolute right-0 bottom-0 z-10 size-20 ;
+}
+
   .scrolling-text {
     @apply overflow-hidden w-full h-full flex;
     
@@ -313,7 +320,7 @@ body {
   @apply grid grid-cols-1 lg:grid-cols-2 gap-5 md:px-0 px-5 mt-20;
 
   > div {
-      @apply rounded-3xl overflow-hidden h-96 relative;
+      @apply rounded-3xl overflow-hidden h-96 relative ;
   > p{
       @apply text-4xl text-white bottom-5 left-5  text-left font-comfortaa;
   }
@@ -328,6 +335,8 @@ body {
 
 #test {
   @apply min-h-screen w-full px-5 sm:px-10 pb-20 container mx-auto;
+
+
 }
 
 #footer {

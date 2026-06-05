@@ -105,7 +105,7 @@ gsap.to(".bg", {
 		
 	 </div>
 	 </div>
-	 <ResilienceTest/>
+	
 	</div>
  )
 }
