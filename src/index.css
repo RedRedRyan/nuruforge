@@ -290,9 +290,7 @@ body {
 #info{
   @apply relative z-10 min-h-dvh w-full ;
 
-  .test-planet{
-    @apply absolute left-0 bottom-0 z-10 size-10 ;
-}
+
 .test-planet2{
   @apply absolute right-0 bottom-0 z-10 size-20 ;
 }
@@ -336,7 +334,14 @@ body {
 #test {
   @apply min-h-screen w-full px-5 sm:px-10 pb-20 container mx-auto;
 
+  .test-planet{
+    @apply  absolute  ;
+}
 
+
+.test-planet2{
+  @apply absolute right-0 ;
+}
 }
 
 #footer {

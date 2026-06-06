@@ -6,13 +6,29 @@ import { ScrollTrigger, Observer } from "gsap/all";
 import { Flip } from "gsap/Flip";
 import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger, Flip);
+gsap.registerPlugin(ScrollTrigger, Flip, Observer);
 
 export default function Info() {
   const galleryRef = useRef(null);
   const wrapRef    = useRef(null);
   const flipCtxRef = useRef(null);
 
+  // Flip swap animation
+  useGSAP(() => {
+    gsap
+	.timeline({
+	 scrollTrigger: {
+		trigger: ".test-planet",
+		start: "bottom bottom",
+		end: "120% bottom",
+		scrub: true,
+	 },
+	})
+	.to(".test-planet", { x: 300 }, 0)
+
+  });
+
+  // Bento flip on scroll
   useEffect(() => {
     const createTween = () => {
       const galleryElement = galleryRef.current;
@@ -57,6 +73,7 @@ export default function Info() {
     };
   }, []);
 
+  // Scrolling text rail + background animation
   useGSAP(() => {
     gsap.to(".green-grid-background", {
       backgroundPosition: "200% 200%",
@@ -168,8 +185,8 @@ export default function Info() {
   return (
     <>
       <section id="info">
-      <img src="/images/planetgreen.png" alt="left-leaf" className="test-planet" />
-      <img src="/images/sgreenball.png" alt="left-leaf" className="test-planet2" />
+
+     
         <style>{`
           .bento--final {
             grid-template-columns: repeat(3, 100vw) !important;
@@ -177,29 +194,18 @@ export default function Info() {
           }
         `}</style>
 
-        {/* Wrap — pinned by ScrollTrigger */}
         <div
           ref={wrapRef}
           className="relative w-full h-screen flex items-center justify-center overflow-hidden"
         >
-          {/* Bento grid */}
           <div
             ref={galleryRef}
             className="relative w-full h-full grid gap-[1vh] grid-cols-[repeat(3,32.5vw)] grid-rows-[repeat(4,23vh)] justify-center content-center"
           >
-            {/* 1 — rows 1-2, col 1 */}
             <div className="bento__item relative overflow-hidden white-grid-background" style={{ gridArea: "1/1/3/2" }} />
-
-            {/* 2 — row 1, col 2 */}
             <div className="bento__item relative overflow-hidden bg-green" style={{ gridArea: "1/2/2/3" }} />
-
-            {/* 3 — rows 2-3, col 2 */}
             <div className="bento__item relative overflow-hidden white-grid-background" style={{ gridArea: "2/2/4/3" }} />
-
-            {/* 4 — rows 1-2, col 3 */}
             <div className="bento__item relative overflow-hidden bg-green" style={{ gridArea: "1/3/3/4" }} />
-
-            {/* 5 — row 3, col 1 */}
             <div className="bento__item relative overflow-hidden green-grid-background" style={{ gridArea: "3/1/4/2" }}>
               <div className="scrolling-text">
                 <div className="rail text-white">
@@ -209,21 +215,14 @@ export default function Info() {
                 </div>
               </div>
             </div>
-
-            {/* 6 — rows 3-4, col 3 */}
             <div className="bento__item relative overflow-hidden bg-green" style={{ gridArea: "3/3/5/4" }} />
-
-            {/* 7 — row 4, col 1 */}
             <div className="bento__item relative overflow-hidden" style={{ gridArea: "4/1/5/2" }} />
-
-            {/* 8 — row 4, col 2 */}
             <div className="bento__item relative overflow-hidden bg-green" style={{ gridArea: "4/2/5/3" }}>
               <h1 className="text-8xl h-full flex-center bottom-0 font-source">Info</h1>
             </div>
           </div>
         </div>
 
-        {/* Content section */}
         <section className="min-h-dvh">
           <div className="container mx-auto px-4 sm:px-10 py-20 relative z-10">
             <h2 className="text-6xl font-semibold mt-4 text-white">
@@ -231,7 +230,6 @@ export default function Info() {
             </h2>
 
             <div className="info-grid">
-              {/* Left div - Content */}
               <div className="md:col-span-1 flex flex-col items-start justify-center gap-5 px-10 bg-transparent">
                 <p className="text-white font-comfortaa text-3xl max-w-lg">
                   Explore the latest innovations, tips, and insights about our smart home products and technology.
@@ -239,17 +237,14 @@ export default function Info() {
                 <a className="badge bg-green px-4 py-2 rounded-full text-white">Blog</a>
               </div>
 
-              {/* Right div - Partnership */}
               <div className="md:col-span-1 rounded-3xl flex flex-col p-8">
                 <h2 className="text-green font-comfortaa text-4xl font-bold mb-6 tracking-wide">
                   Partnerships
                 </h2>
-
                 <div className="flex flex-col gap-3">
-                  {/* Partner 1 - Infineon */}
                   <a
                     href="https://www.infineon.com/"
-                    className="group flex items-center gap-4  rounded-2xl px-5 py-4 transition-colors duration-300 hover:bg-green cursor-pointer"
+                    className="group flex items-center gap-4 rounded-2xl px-5 py-4 transition-colors duration-300 hover:bg-green cursor-pointer"
                   >
                     <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/10 group-hover:bg-black/10 transition-colors duration-300 overflow-hidden shrink-0">
                       <img src="./images/infineon.svg" className="w-full h-full object-contain" />
@@ -259,7 +254,6 @@ export default function Info() {
                     </span>
                   </a>
 
-                  {/* Partner 2 - UmemeSense */}
                   <a
                     href="https://www.umemesense.com/"
                     className="group flex items-center gap-4 rounded-2xl px-5 py-4 transition-colors duration-300 hover:bg-green cursor-pointer"

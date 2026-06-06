@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 /*
   ResilienceTest.jsx
@@ -205,6 +207,57 @@ function Verdict({ power, net }) {
 }
 
 export default function ResilienceTest() {
+
+  useGSAP(() => {
+
+
+    gsap.to(".test-title", {
+      duration: 2.5,
+      repeat: -1,           // Loops indefinitely
+      repeatDelay: 3,     // Wait 4.5 seconds between repeats
+      scrambleText: {
+        text: "The Resilience Test",
+        chars: "tt",
+        revealDelay: 0.2,
+        tweenLength: true,
+        speed: 0.1,
+        trigger: "#test",
+        newClass: "text-gradient",
+      },
+      ease: "power2.inOut",
+      overwrite: "auto",
+    });
+
+    gsap
+	.timeline({
+	 scrollTrigger: {
+		trigger: "#test",
+    duration: 10,
+		start: "top top",
+		end: "bottom  bottm",
+		scrub: true,
+
+	 },
+	})
+	.to(".test-planet", { y: -500 }, 0)
+
+
+
+
+  gsap
+	.timeline({
+	 scrollTrigger: {
+		trigger: "#test",
+    duration: 10,
+		start: "top center",
+		scrub: true,
+
+	 },
+	})
+  .to(".test-planet2", {y:  500}, {x: -250}, 0)
+
+  });
+
   const [power, setPower] = useState("on");
   const [net, setNet]     = useState("strong");
   const [simRunning, setSimRunning] = useState(false);
@@ -288,9 +341,12 @@ export default function ResilienceTest() {
       id='test'
       
     >
+            <img src="/images/planetgreen.png"  className="test-planet" />
+            
+            <img src="/images/planetgreen.png"  className="test-planet2" />
            
       <span
-          className="font-comfortaa  font-bold text-white uppercase tracking-widest"
+          className="test-title font-comfortaa  text-3xl font-bold text-white uppercase tracking-widest"
     
         >
           The Resilience // Test

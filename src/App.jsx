@@ -1,4 +1,4 @@
-import { ScrollTrigger, SplitText,Draggable, InertiaPlugin,CustomEase, CustomWiggle, MotionPathPlugin, Observer } from 'gsap/all';
+import { ScrollTrigger,ScrambleTextPlugin ,SplitText,Draggable, InertiaPlugin,CustomEase, CustomWiggle, MotionPathPlugin, Observer } from 'gsap/all';
 import Hero from './components/Hero';
 import gsap from 'gsap';
 import Tech from './components/Tech'
@@ -11,7 +11,7 @@ import ResilienceTest from './components/ResilienceTest';
 
 
 
-gsap.registerPlugin(ScrollTrigger, SplitText,Draggable, InertiaPlugin,CustomEase, CustomWiggle, MotionPathPlugin,Observer);
+gsap.registerPlugin(ScrollTrigger, SplitText,Draggable, InertiaPlugin,CustomEase, CustomWiggle, MotionPathPlugin,Observer, ScrambleTextPlugin);
 
 const App = () => {
     return (

@@ -1,5 +1,5 @@
 import { useGSAP } from "@gsap/react";
-import { SplitText, Draggable, InertiaPlugin, CustomEase, CustomWiggle } from "gsap/all";
+import { SplitText, Draggable, InertiaPlugin, CustomEase, CustomWiggle, ScrambleTextPlugin} from "gsap/all";
 import Radar from "./Radar";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
@@ -63,6 +63,8 @@ const Hero = () => {
 
     });
 
+
+    const titlesplit = new SplitText(".title", {type : "chars, words"} )
     const heroSplit = new SplitText(".hero-info", { type: "chars, words" });
     const paragraphSplit = new SplitText(".subtitle", { type: "lines" });
 
@@ -83,6 +85,22 @@ const Hero = () => {
       stagger: 0.06,
       delay: 1,
     });
+
+    gsap.to(".title", {
+      duration: 2.5,
+      scrambleText: {
+        text: "Forge The Future",
+        chars: ">>",
+        revealDelay: 0.2,
+        tweenLength: true,
+        speed: 0.1,
+        newClass: "text-gradient",
+      },
+      ease: "power2.inOut",
+      overwrite: "auto",
+    });
+
+
 
     gsap
       .timeline({
@@ -124,7 +142,7 @@ const Hero = () => {
           </div>
 
           +
-          <h1 className="">Forge The<br />Future</h1>
+          <h1 className="title" >Forge The<br />Future</h1>
           <h2 className="hero-info">
             
             AI-powered <br /> Solutions For <br /> Smarter living.
